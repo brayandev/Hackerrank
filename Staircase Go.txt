@@ -1,0 +1,13 @@
+func staircase(n int32) {
+    count := n
+    var counti int = int(count)//recebe o valor 6 de count n como int para ser usado no parametro da função Repeat
+    var contador int //contador de i como int para poder ser usado no parametro da função Repeat
+    var i int32
+    for i = 0; i <= n; i++{
+        contador++
+        spaces := strings.Repeat(" ",counti-contador)
+        char := strings.Repeat("#",contador)
+        fmt.Println(spaces + char)
+    }
+}
+
