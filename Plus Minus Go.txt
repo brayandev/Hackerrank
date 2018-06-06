@@ -1,0 +1,21 @@
+func plusMinus(arr []int32) {
+    numNegative := 0.0
+    numPositive := 0.0
+    zero := 0.0
+    var lenarr float64 = float64(len(arr))
+
+    for i:= 0; i < len(arr); i++{
+        if(arr[i] > 0){
+            numPositive = numPositive + 1.0
+        }
+        if(arr[i] < 0){
+            numNegative = numNegative + 1.0
+        }
+        if(arr[i] == 0){
+            zero = zero + 1.0
+        }
+    }
+    fmt.Println(numPositive / lenarr)
+    fmt.Println(numNegative / lenarr)
+    fmt.Println(zero / lenarr)
+}
