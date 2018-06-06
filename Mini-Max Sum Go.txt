@@ -1,0 +1,34 @@
+func miniMaxSum(arr []int32) {
+    count := 0
+    var result int32
+    var tiraNum int32
+    var array []int32
+    var max int32
+    var min int32
+    
+    for _, i := range arr{
+        result += i
+    }
+    
+    for i := 0; i < len(arr); i++{
+        if(count == i){
+            tiraNum = result - arr[i]
+            count++
+        }
+        array = append(array, tiraNum)
+    }
+    
+    max = array[0]
+    min = array[0]
+    
+    //Achei essa maneira de pegar o menor e o maior valor dentro do array
+    for i := 0; i < len(array); i++{
+        if array[i] < min{
+            min = array[i]
+        }
+        if array[i] > max{
+            max = array[i]
+        }
+    }
+    fmt.Println(min,max)
+}
