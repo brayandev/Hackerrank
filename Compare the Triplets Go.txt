@@ -1,0 +1,15 @@
+func solve(a []int32, b []int32) []int32{
+    var pointsA int32 
+    var pointsB int32
+    var result []int32
+    for i:= 0; i < 3; i++{
+        if(a[i] > b[i]){
+            pointsA++
+        }
+        if(a[i] < b[i]){
+            pointsB++
+        }
+    }
+    result = append(result,pointsA,pointsB)
+    return result
+}
