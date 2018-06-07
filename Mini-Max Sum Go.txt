@@ -1,40 +1,32 @@
 func miniMaxSum(arr []int32) {
-    count := 0
-    var result int32
-    var tiraNum int32
-    var array []int32
-    var max int32
-    var min int32
+    var result int64
+    var tiraNum int64
+    var array []int64
+    var max int64
+    var min int64
     
-    //realiza a soma de todos os elementos do array
     for _, i := range arr{
-        result += i
+        j := int64(i)
+        result += j
     }
     
-    //Faz a subtração pra simular a retirada dos numeros de acordo com o enunciado
     for i := 0; i < len(arr); i++{
-        if(count == i){
-            tiraNum = result - arr[i]
-            count++
-        }
-        //cria um novo array que recebe os novos valores ja subtraidos
-        array = append(array, tiraNum)
+        tiraNum = result - int64(arr[i])
+    
+        array = append(array,tiraNum)
     }
     
-    //cria duas variaveis q recebe o indice zero do array como ponto de partida
-    max = array[0]
     min = array[0]
+    max = array[0]
     
-    //percorre o array usando max e min que receberam parametro zero do array
-    for i := 0; i < len(array); i++{
-        // verifica se o valor após o indice passado é menor que o existente, se sim troca o valor pelo valor menor
+    for i := 0; i < len(arr); i++{
         if array[i] < min{
             min = array[i]
         }
-        //verifica se o valor após o indice passado é maior que o existente, se sim troca o valor pelo maior
         if array[i] > max{
             max = array[i]
         }
     }
+    
     fmt.Println(min,max)
 }
