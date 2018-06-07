@@ -1,0 +1,17 @@
+func birthdayCakeCandles(ar []int32) int32 {
+    height := int32(0)
+    var velas int32
+    
+    for i := 0; i < len(ar); i++{
+        if ar[i] > height{
+            height = ar[i]
+        }
+    }
+    
+    for i := 0; i < len(ar); i++{
+        if height == ar[i]{
+            velas = velas + 1
+        }
+    }
+    return velas
+}
